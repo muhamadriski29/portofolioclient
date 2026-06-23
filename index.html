@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio_v2.0.exe | Y2K Cyber</title>
+    <!-- Tailwind CSS (compiled) -->
+    <link rel="stylesheet" href="./src/css/output.css">
+    <!-- Google Fonts: Space Grotesk & VT323 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=VT323&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .font-pixel {
+            font-family: 'VT323', monospace;
+        }
+
+        .win-titlebar {
+            background: linear-gradient(90deg, #000080, #1084d0);
+        }
+
+        .dark .win-titlebar {
+            background: linear-gradient(90deg, #B026FF, #FF00FF);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-y2k-light dark:bg-y2k-dark text-y2k-dark dark:text-y2k-white font-space transition-colors duration-300 min-h-screen flex flex-col">
+
+    <!-- Header (Sticky Marquee + Navbar) -->
+    <header class="fixed top-0 w-full z-50">
+        <!-- Top Marquee -->
+        <div
+            class="bg-y2k-yellow dark:bg-y2k-lime text-black border-b-2 border-black dark:border-y2k-pink overflow-hidden whitespace-nowrap py-1">
+            <div class="inline-block animate-marquee font-pixel text-lg uppercase tracking-widest font-bold">
+                *** WELCOME TO THE CYBERSPACE *** SYSTEM ONLINE *** NO CONNECTION LOST *** Y2K AESTHETIC V2.0 ACTIVATED
+                *** PORTFOLIO ACCESSED ***
+            </div>
+        </div>
+
+        <!-- Desktop Navbar -->
+        <nav class="w-full border-win95 bg-y2k-light dark:bg-y2k-dark hidden md:block">
+            <div class="container mx-auto px-4 py-1 flex justify-between items-center">
+                <div class="flex items-center gap-4">
+                    <a href="index.html"
+                        class="border-win95 bg-y2k-light dark:bg-black px-4 py-1 font-bold uppercase tracking-widest text-y2k-dark dark:text-y2k-lime flex items-center gap-2 active:border-win95-inset">
+                        <i data-lucide="terminal" class="w-4 h-4"></i> START
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-2 font-pixel text-xl">
+                    <a href="index.html"
+                        class="border-win95-inset bg-white dark:bg-black px-4 py-1 text-y2k-blue dark:text-y2k-cyan hover:bg-y2k-blue hover:text-white dark:hover:bg-y2k-cyan dark:hover:text-black cursor-pointer">HOME.EXE</a>
+                    <a href="projects.html"
+                        class="border-win95-inset bg-white dark:bg-black px-4 py-1 text-y2k-dark dark:text-y2k-pink hover:bg-y2k-dark hover:text-white dark:hover:bg-y2k-pink dark:hover:text-black cursor-pointer">PROJECTS.DLL</a>
+                    <a href="about.html"
+                        class="border-win95-inset bg-white dark:bg-black px-4 py-1 text-y2k-dark dark:text-y2k-lime hover:bg-y2k-dark hover:text-white dark:hover:bg-y2k-lime dark:hover:text-black cursor-pointer">ABOUT.TXT</a>
+
+                    <button id="theme-toggle"
+                        class="ml-4 border-win95 bg-y2k-light dark:bg-black p-1 active:border-win95-inset text-y2k-dark dark:text-y2k-yellow">
+                        <i data-lucide="zap" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Navbar -->
+        <nav
+            class="md:hidden w-full border-b-4 border-y2k-dark dark:border-y2k-lime bg-y2k-light dark:bg-black flex justify-between p-4">
+            <span class="font-pixel text-2xl font-bold dark:text-y2k-lime">SYSTEM_OS</span>
+            <button id="mobile-menu-btn"
+                class="border-win95 p-1 bg-y2k-light dark:bg-black active:border-win95-inset dark:text-y2k-lime">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-[60] bg-y2k-light dark:bg-y2k-dark pt-24 p-4">
+        <div class="border-win95 bg-y2k-light dark:bg-black h-full flex flex-col">
+            <div
+                class="win-titlebar px-2 py-1 flex justify-between items-center text-white font-pixel text-xl font-bold">
+                <span>MENU.EXE</span>
+                <button id="close-menu-btn"
+                    class="border-win95 bg-y2k-light dark:bg-black text-black dark:text-white px-2 py-0 active:border-win95-inset">X</button>
+            </div>
+            <div class="p-4 flex flex-col gap-4 font-pixel text-3xl flex-grow">
+                <a href="index.html" class="text-y2k-blue dark:text-y2k-cyan hover:underline">> HOME</a>
+                <a href="projects.html" class="text-y2k-blue dark:text-y2k-pink hover:underline">> PROJECTS</a>
+                <a href="about.html" class="text-y2k-blue dark:text-y2k-lime hover:underline">> ABOUT</a>
+            </div>
+            <div class="p-4 border-t-2 border-y2k-dark dark:border-y2k-lime">
+                <button id="mobile-theme-toggle"
+                    class="w-full border-win95 bg-y2k-light dark:bg-black p-2 font-pixel text-2xl font-bold dark:text-y2k-yellow flex justify-center items-center gap-2 active:border-win95-inset">
+                    <i data-lucide="zap"></i> TOGGLE_POWER
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main
+        class="flex-grow pt-40 pb-20 container mx-auto px-4 sm:px-6 relative flex flex-col justify-center items-center">
+
+        <!-- Window Container -->
+        <div
+            class="w-full max-w-5xl border-win95 bg-y2k-light dark:bg-black shadow-brutal dark:shadow-brutal-cyan relative animate-fade-in-up">
+
+            <!-- Window Titlebar -->
+            <div class="win-titlebar px-2 py-1 flex justify-between items-center text-white">
+                <div class="flex items-center gap-2 font-pixel text-lg font-bold tracking-widest">
+                    <i data-lucide="cpu" class="w-4 h-4"></i> <span>WELCOME_MSG.EXE</span>
+                </div>
+                <div class="flex gap-1">
+                    <button
+                        class="border-win95 bg-y2k-light dark:bg-black text-black dark:text-white px-2 py-0 text-xs font-bold leading-none active:border-win95-inset">_</button>
+                    <button
+                        class="border-win95 bg-y2k-light dark:bg-black text-black dark:text-white px-2 py-0 text-xs font-bold leading-none active:border-win95-inset">□</button>
+                    <button
+                        class="border-win95 bg-y2k-light dark:bg-black text-black dark:text-white px-2 py-0 text-xs font-bold leading-none active:border-win95-inset">X</button>
+                </div>
+            </div>
+
+            <!-- Window Content -->
+            <div
+                class="p-6 sm:p-10 border-win95-inset m-1 bg-white dark:bg-y2k-dark relative overflow-hidden flex flex-col md:flex-row gap-8 items-center">
+                <!-- Background decoration inside window -->
+                <div class="absolute -right-10 -top-10 opacity-10 dark:opacity-20 transform rotate-12">
+                    <i data-lucide="globe" class="w-64 h-64 text-y2k-blue dark:text-y2k-pink"></i>
+                </div>
+
+                <!-- Left: Frame for Photo -->
+                <div class="w-full md:w-1/3 flex justify-center relative z-10">
+                    <div
+                        class="border-win95 bg-y2k-light dark:bg-black shadow-brutal dark:shadow-brutal-pink p-2 w-48 h-48 sm:w-64 sm:h-64 flex items-center justify-center relative group">
+                        <div
+                            class="absolute inset-0 border-win95-inset bg-gray-200 dark:bg-gray-800 m-1 overflow-hidden flex items-center justify-center text-center">
+                            <!-- Tempat untuk foto Anda. Simpan file foto di src/assets/images/profile.jpg atau ubah path-nya -->
+                            <img src="./src/assets/images/muhamadriski.jpeg" alt="Muhamad Riski"
+                                class="w-full h-full object-cover hidden" id="profile-img"
+                                onload="this.classList.remove('hidden'); document.getElementById('profile-placeholder').classList.add('hidden');"
+                                onerror="this.classList.add('hidden'); document.getElementById('profile-placeholder').classList.remove('hidden');">
+
+                            <div id="profile-placeholder" class="text-gray-500 dark:text-gray-400 font-pixel font-bold">
+                                <i data-lucide="image" class="w-12 h-12 mx-auto mb-2"></i>
+                                [INSERT PHOTO HERE]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Text Content -->
+                <div class="w-full md:w-2/3 relative z-10">
+                    <p class="font-pixel text-y2k-blue dark:text-y2k-lime text-xl mb-2">> INITIALIZING SYSTEM...</p>
+                    <h1 class="text-5xl md:text-7xl font-bold uppercase mb-4 leading-none tracking-tighter">
+                        <span class="text-transparent"
+                            style="-webkit-text-stroke: 2px var(--color-y2k-dark); color: var(--color-y2k-pink);">Muhamad</span><br>
+                        <span class="dark:text-y2k-cyan">Riski</span>
+                    </h1>
+                    <p
+                        class="font-pixel text-xl sm:text-2xl font-bold bg-y2k-dark text-white dark:bg-y2k-lime dark:text-black inline-block px-3 py-1 mb-6">
+                        SOFTWARE ENGINEER & DATA ANALYST
+                    </p>
+
+                    <p
+                        class="text-lg mb-8 max-w-xl font-medium border-l-4 border-y2k-dark dark:border-y2k-cyan pl-4 py-2 bg-y2k-light dark:bg-black dark:text-y2k-lime">
+                        Merancang solusi digital yang tangguh melalui rekayasa perangkat lunak modern, serta
+                        mengekstraksi wawasan berharga dari data.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 font-pixel text-xl">
+                        <a href="projects.html"
+                            class="text-center border-win95 bg-y2k-light dark:bg-y2k-lime dark:text-black text-y2k-dark px-6 py-2 font-bold hover:bg-y2k-blue hover:text-white dark:hover:bg-y2k-cyan transition-colors active:border-win95-inset">
+                            [ EXECUTE: PROJECTS ]
+                        </a>
+                        <a href="about.html"
+                            class="text-center border-win95 bg-y2k-light dark:bg-black dark:text-y2k-pink text-y2k-dark px-6 py-2 font-bold hover:bg-black hover:text-white dark:hover:bg-y2k-pink dark:hover:text-black transition-colors active:border-win95-inset">
+                            [ READ: ABOUT.TXT ]
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Window Status Bar -->
+            <div
+                class="border-t-2 border-y2k-light dark:border-black border-t-white dark:border-t-y2k-lime px-2 py-1 flex justify-between font-pixel text-sm bg-y2k-light dark:bg-black dark:text-white mt-1">
+                <span>STATUS: ONLINE</span>
+                <span>MEM: 64MB OK</span>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="border-t-2 border-y2k-dark dark:border-y2k-lime bg-y2k-light dark:bg-black py-4 mt-auto relative z-50">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center font-pixel text-lg">
+            <span class="dark:text-y2k-pink">© 2026 MUHAMAD RISKI</span>
+            <div class="flex gap-4 mt-4 md:mt-0">
+                <a href="https://github.com/muhamadriski29" target="_blank"
+                    class="text-y2k-dark dark:text-y2k-white hover:text-y2k-blue dark:hover:text-y2k-cyan hover:-translate-y-1 transition-transform"
+                    title="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.03c3.15-.38 6.5-1.4 6.5-7.17A5.1 5.1 0 0 0 19 4.8a5.1 5.1 0 0 0-.1-3.8s-1.2-.3-3.9 1.5a13.38 13.38 0 0 0-7 0C5.3 1 4.1 1.3 4.1 1.3A5.1 5.1 0 0 0 4 4.8 5.1 5.1 0 0 0 2.5 7.8c0 5.77 3.35 6.79 6.5 7.17A4.8 4.8 0 0 0 8 18v4"/><path d="M12 22v-4"/><path d="M5 19l-2-2"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/muhamad-riski-51a9a73a6" target="_blank"
+                    class="text-y2k-dark dark:text-y2k-white hover:text-y2k-blue dark:hover:text-y2k-cyan hover:-translate-y-1 transition-transform"
+                    title="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="mailto:muhammad29riski@gmail.com"
+                    class="text-y2k-dark dark:text-y2k-white hover:text-y2k-blue dark:hover:text-y2k-cyan hover:-translate-y-1 transition-transform"
+                    title="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./src/js/main.js"></script>
+    <script src="./src/js/animations.js"></script>
+</body>
+
+</html>
