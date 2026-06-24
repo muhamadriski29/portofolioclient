@@ -1,13 +1,15 @@
 // projects.js - Fetch & render projects from REST API
 // Endpoint: http://localhost:8080/api/projects
 
-const API_URL = 'http://localhost:8080/api/projects';
+const API_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') 
+    ? 'http://localhost:8080/api/projects' 
+    : 'https://api.domainanda.com/api/projects';
 
 // Y2K color accent cycling for card variety
 const ACCENT_COLORS = [
-    { shadow: 'shadow-brutal-cyan',  border: 'border-y2k-lime', overlay: 'bg-y2k-pink',  title: 'text-y2k-pink', btn: 'bg-y2k-lime',  btnHover: 'hover:bg-y2k-cyan' },
-    { shadow: 'shadow-brutal-pink',  border: 'border-y2k-pink', overlay: 'bg-y2k-cyan',  title: 'text-y2k-cyan', btn: 'bg-y2k-pink',  btnHover: 'hover:bg-y2k-cyan' },
-    { shadow: 'shadow-brutal-lime',  border: 'border-y2k-cyan', overlay: 'bg-y2k-lime',  title: 'text-y2k-lime', btn: 'bg-y2k-cyan',  btnHover: 'hover:bg-y2k-lime' },
+    { shadow: 'shadow-brutal-cyan', border: 'border-y2k-lime', overlay: 'bg-y2k-pink', title: 'text-y2k-pink', btn: 'bg-y2k-lime', btnHover: 'hover:bg-y2k-cyan' },
+    { shadow: 'shadow-brutal-pink', border: 'border-y2k-pink', overlay: 'bg-y2k-cyan', title: 'text-y2k-cyan', btn: 'bg-y2k-pink', btnHover: 'hover:bg-y2k-cyan' },
+    { shadow: 'shadow-brutal-lime', border: 'border-y2k-cyan', overlay: 'bg-y2k-lime', title: 'text-y2k-lime', btn: 'bg-y2k-cyan', btnHover: 'hover:bg-y2k-lime' },
 ];
 
 // Badge color palette for tech stack tags
@@ -85,11 +87,16 @@ function createProjectCard(project, index) {
                 </p>
 
                 <!-- Action Button -->
-                <a href="${project.project_url || project.demo_url || '#'}" 
-                   target="_blank" rel="noopener noreferrer"
-                   class="font-pixel text-xl text-center border-win95 bg-y2k-light dark:${accent.btn} dark:text-black text-y2k-dark py-1 font-bold hover:bg-y2k-blue hover:text-white dark:${accent.btnHover} transition-colors active:border-win95-inset block">
-                    [ RUN PROGRAM ]
-                </a>
+                ${(project.portfolio_url || project.project_url || project.demo_url)
+                    ? `<a href="${project.portfolio_url || project.project_url || project.demo_url}" 
+                          target="_blank" rel="noopener noreferrer"
+                          class="font-pixel text-xl text-center border-win95 bg-y2k-light dark:${accent.btn} dark:text-black text-y2k-dark py-1 font-bold hover:bg-y2k-blue hover:text-white dark:${accent.btnHover} transition-colors active:border-win95-inset block">
+                           [ RUN PROGRAM ]
+                       </a>`
+                    : `<span class="font-pixel text-xl text-center border-win95-inset bg-gray-100 dark:bg-y2k-dark dark:text-gray-600 text-gray-400 py-1 block select-none cursor-not-allowed opacity-50">
+                           [ NO URL ]
+                       </span>`
+                }
             </div>
         </article>
     `;

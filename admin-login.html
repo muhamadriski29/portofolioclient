@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN.EXE | Y2K Cyber CMS</title>
+    <meta name="description" content="Halaman login administrator untuk Y2K Cyber CMS Portfolio.">
+    <link rel="stylesheet" href="./src/css/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=VT323&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .font-pixel {
+            font-family: 'VT323', monospace;
+        }
+
+        .win-titlebar {
+            background: linear-gradient(90deg, #000080, #1084d0);
+        }
+
+        .dark .win-titlebar {
+            background: linear-gradient(90deg, #B026FF, #FF00FF);
+        }
+
+        /* Scanline overlay */
+        .scanline::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0,0,0,0.03) 2px,
+                rgba(0,0,0,0.03) 4px
+            );
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Matrix rain background */
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.07;
+        }
+
+        .main-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Blinking cursor */
+        @keyframes blink-cursor {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .blink {
+            animation: blink-cursor 1s step-end infinite;
+        }
+
+        /* Input Y2K focus */
+        .y2k-input:focus {
+            outline: none;
+        }
+
+        .dark .y2k-input:focus {
+            box-shadow: 0 0 0 2px #00FFFF, 0 0 12px #00FFFF44;
+        }
+
+        /* Login button press */
+        #login-btn:active {
+            transform: translate(4px, 4px);
+            box-shadow: none !important;
+        }
+
+        /* Password show toggle */
+        #toggle-password {
+            cursor: pointer;
+        }
+
+        /* Boot sequence text */
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typewriter 2s steps(40, end) forwards;
+        }
+
+        /* Shake animation for error */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-6px); }
+            80% { transform: translateX(6px); }
+        }
+
+        .shake {
+            animation: shake 0.4s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-y2k-light dark:bg-y2k-dark text-y2k-dark dark:text-y2k-white font-space min-h-screen flex flex-col items-center justify-center">
+
+    <!-- Matrix canvas background -->
+    <canvas id="matrix-canvas"></canvas>
+
+    <div class="main-wrapper w-full flex flex-col items-center justify-center min-h-screen px-3 py-6 sm:px-4 sm:py-8">
+
+        <!-- Boot sequence header -->
+        <div class="mb-4 sm:mb-6 text-center font-pixel">
+            <div class="dark:text-y2k-lime text-green-700 text-base sm:text-lg mb-1 overflow-hidden">
+                <span class="typewriter inline-block">&gt; INITIALIZING SECURE_LOGIN.EXE...</span>
+            </div>
+            <div class="dark:text-y2k-cyan text-blue-700 text-sm sm:text-base mb-1 opacity-80">
+                &gt; CHECKING CREDENTIALS DATABASE...
+            </div>
+            <div class="dark:text-y2k-yellow text-yellow-700 text-sm sm:text-base mb-3 sm:mb-4 opacity-80">
+                &gt; PLEASE AUTHENTICATE TO CONTINUE
+                <span class="blink">█</span>
+            </div>
+        </div>
+
+        <!-- Login Window -->
+        <div id="login-window" class="border-win95 bg-y2k-light dark:bg-black shadow-brutal dark:shadow-brutal-cyan w-full max-w-sm sm:max-w-md">
+
+            <!-- Window Titlebar -->
+            <div class="win-titlebar px-2 py-1 flex justify-between items-center text-white select-none">
+                <div class="flex items-center gap-2 font-pixel text-lg font-bold tracking-widest">
+                    <i data-lucide="shield" class="w-4 h-4"></i>
+                    <span>SECURE_LOGIN.EXE</span>
+                </div>
+                <div class="flex gap-1">
+                    <button class="border-win95 bg-y2k-light dark:bg-black text-black dark:text-white px-2 py-0 text-xs font-bold leading-none active:border-win95-inset" aria-label="Minimize">_</button>
+                    <button class="border-win95 bg-y2k-light dark:bg-black text-black dark:text-white px-2 py-0 text-xs font-bold leading-none active:border-win95-inset" aria-label="Maximize">□</button>
+                    <button class="border-win95 bg-y2k-light dark:bg-black text-black dark:text-white px-2 py-0 text-xs font-bold leading-none active:border-win95-inset" aria-label="Close">X</button>
+                </div>
+            </div>
+
+            <!-- Window Content -->
+            <div class="p-1">
+                <div class="border-win95-inset bg-white dark:bg-y2k-dark p-4 sm:p-6 scanline relative">
+
+                    <!-- Logo / Header -->
+                    <div class="text-center mb-4 sm:mb-6">
+                        <div class="font-pixel text-4xl sm:text-5xl dark:text-y2k-yellow text-y2k-blue leading-tight">
+                            &gt; CMS.EXE
+                        </div>
+                        <div class="font-pixel text-lg sm:text-xl dark:text-y2k-lime text-green-700 mt-1">
+                            ADMIN AUTHENTICATION REQUIRED
+                        </div>
+                        <div class="mt-3 border-t-2 border-dashed border-y2k-dark dark:border-y2k-pink opacity-40"></div>
+                    </div>
+
+                    <!-- Alert Message -->
+                    <div id="login-message" class="hidden mb-4 font-pixel text-xl dark:text-y2k-pink text-red-600 border-win95-inset bg-red-50 dark:bg-black p-3 text-center" role="alert" aria-live="polite"></div>
+
+                    <!-- Login Form -->
+                    <form id="login-form" novalidate>
+
+                        <!-- Username Field -->
+                        <div class="mb-4 sm:mb-5">
+                            <label for="login-username" class="block font-pixel text-lg sm:text-xl mb-1 dark:text-y2k-lime text-y2k-dark">
+                                USERNAME_
+                            </label>
+                            <div class="flex items-center border-win95-inset bg-white dark:bg-black">
+                                <span class="font-pixel text-lg sm:text-xl dark:text-y2k-cyan text-gray-500 px-2">C:\&gt;</span>
+                                <input
+                                    id="login-username"
+                                    name="username"
+                                    type="text"
+                                    required
+                                    autocomplete="username"
+                                    placeholder="admin"
+                                    class="y2k-input flex-1 bg-transparent text-y2k-dark dark:text-y2k-white px-2 py-1.5 sm:py-2 font-pixel text-lg sm:text-xl placeholder:text-gray-400 dark:placeholder:text-gray-600 focus:outline-none"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="mb-5 sm:mb-7">
+                            <label for="login-password" class="block font-pixel text-lg sm:text-xl mb-1 dark:text-y2k-lime text-y2k-dark">
+                                PASSWORD_
+                            </label>
+                            <div class="flex items-center border-win95-inset bg-white dark:bg-black">
+                                <span class="font-pixel text-lg sm:text-xl dark:text-y2k-cyan text-gray-500 px-2">C:\&gt;</span>
+                                <input
+                                    id="login-password"
+                                    name="password"
+                                    type="password"
+                                    required
+                                    autocomplete="current-password"
+                                    placeholder="••••••••••"
+                                    class="y2k-input flex-1 bg-transparent text-y2k-dark dark:text-y2k-white px-2 py-1.5 sm:py-2 font-pixel text-lg sm:text-xl placeholder:text-gray-400 dark:placeholder:text-gray-600 focus:outline-none"
+                                >
+                                <button
+                                    type="button"
+                                    id="toggle-password"
+                                    class="px-3 dark:text-y2k-cyan text-gray-500 hover:dark:text-y2k-lime transition-colors"
+                                    aria-label="Tampilkan/Sembunyikan password"
+                                >
+                                    <i data-lucide="eye" class="w-4 h-4" id="eye-icon"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="border-t-2 border-y2k-dark dark:border-y2k-lime mb-5 opacity-20"></div>
+
+                        <!-- Login Button -->
+                        <button
+                            id="login-btn"
+                            type="submit"
+                            class="w-full font-pixel text-xl sm:text-2xl tracking-widest border-win95 bg-y2k-light dark:bg-y2k-yellow dark:text-black text-y2k-dark py-2 sm:py-3 font-bold shadow-brutal dark:shadow-brutal-cyan hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all duration-150 flex items-center justify-center gap-3"
+                        >
+                            <i data-lucide="log-in" class="w-5 h-5"></i>
+                            <span id="login-btn-text">[ LOGIN.EXE ]</span>
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+
+            <!-- Window Status Bar -->
+            <div class="border-t-2 border-white dark:border-y2k-lime px-3 py-1 flex justify-between font-pixel text-sm bg-y2k-light dark:bg-black dark:text-y2k-white mt-px">
+                <span id="login-status">AWAITING INPUT...</span>
+                <span class="dark:text-y2k-cyan">SECURE AUTH v1.0</span>
+            </div>
+        </div>
+
+        <!-- Back to Home -->
+        <div class="mt-4 sm:mt-6 font-pixel text-lg sm:text-xl">
+            <a href="index.html" class="border-win95 bg-y2k-light dark:bg-black dark:text-y2k-cyan text-y2k-dark px-4 sm:px-5 py-2 font-bold hover:bg-y2k-blue hover:text-white dark:hover:bg-y2k-cyan dark:hover:text-black transition-colors active:border-win95-inset flex items-center gap-2">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> [ BACK_TO_HOME ]
+            </a>
+        </div>
+    </div>
+
+    <script src="./src/js/admin-login.js"></script>
+    <script>
+        // Matrix rain effect
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const fontSize = 14;
+        const cols = Math.floor(canvas.width / fontSize);
+        const drops = Array(cols).fill(1);
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#00FF41';
+            ctx.font = `${fontSize}px VT323`;
+            drops.forEach((y, i) => {
+                const char = chars[Math.floor(Math.random() * chars.length)];
+                ctx.fillText(char, i * fontSize, y * fontSize);
+                if (y * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            });
+        }
+
+        setInterval(drawMatrix, 60);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Init lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
