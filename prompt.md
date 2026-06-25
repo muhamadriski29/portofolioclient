@@ -1,9 +1,9 @@
-mantap sudah sempurna untuk tampilan, tapi masih ada satu detail kecil lagi yaitu pada data tabel konten;
+jangan lakukan perubahan apapun dulu, konfirmasi dan jelaskan alur yang akan kamu lakukan. kalau oke nanti akan saya acc
 
-1. saat dihapus idnya  malah nambah padalah hanya ada 2 data, jad dari 1 langsung 4
+ada beberapa hal yang perlu diperbarui, yaitu fitur darkmodenya, tolong jangan dibuat otomatis jika device nya sudah darkmode, tapi tambahkan fitur switch nya.
 
-2. dan juga tolong data yang ada di tabel konten diurutkan id terkecil/ascending (naik) bukan terbesar/descending (turun). jadi id 1 di paling atas, bukan paling bawah.
+oke ini switchnya ada tapi itu bukan untuk darkmode, tapi itu bagus untuk variasi, pertahankan itu. 
 
+jadi tinggal tambahkan saja fitur switch darkmode supaya tidak mengikuti device user.
 
-
-untuk itu saya mau kamu analisis dulu permasalahannya ini dilakukan di file backend atau frontend, kalau sudah saya acc baru kamu eksekusi
+nah jadi fokusnya hanya menambah fitur switch untuk darkmode, jangan ubah/hapus/ganti tombol switch yang sudah ada.

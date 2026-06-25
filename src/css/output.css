@@ -1563,179 +1563,179 @@
     }
   }
   .dark\:border-black {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       border-color: var(--color-black);
     }
   }
   .dark\:border-gray-700 {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       border-color: var(--color-gray-700);
     }
   }
   .dark\:border-white {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       border-color: var(--color-white);
     }
   }
   .dark\:border-y2k-blue {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       border-color: var(--color-y2k-blue);
     }
   }
   .dark\:border-y2k-cyan {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       border-color: var(--color-y2k-cyan);
     }
   }
   .dark\:border-y2k-dark {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       border-color: var(--color-y2k-dark);
     }
   }
   .dark\:border-y2k-lime {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       border-color: var(--color-y2k-lime);
     }
   }
   .dark\:border-y2k-pink {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       border-color: var(--color-y2k-pink);
     }
   }
   .dark\:border-y2k-yellow {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       border-color: var(--color-y2k-yellow);
     }
   }
   .dark\:border-t-y2k-lime {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       border-top-color: var(--color-y2k-lime);
     }
   }
   .dark\:bg-\[\#0000AA\] {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       background-color: #0000AA;
     }
   }
   .dark\:bg-black {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       background-color: var(--color-black);
     }
   }
   .dark\:bg-gray-700 {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       background-color: var(--color-gray-700);
     }
   }
   .dark\:bg-gray-800 {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       background-color: var(--color-gray-800);
     }
   }
   .dark\:bg-red-900 {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       background-color: var(--color-red-900);
     }
   }
   .dark\:bg-white {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       background-color: var(--color-white);
     }
   }
   .dark\:bg-y2k-cyan {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       background-color: var(--color-y2k-cyan);
     }
   }
   .dark\:bg-y2k-dark {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       background-color: var(--color-y2k-dark);
     }
   }
   .dark\:bg-y2k-lime {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       background-color: var(--color-y2k-lime);
     }
   }
   .dark\:bg-y2k-pink {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       background-color: var(--color-y2k-pink);
     }
   }
   .dark\:bg-y2k-yellow {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       background-color: var(--color-y2k-yellow);
     }
   }
   .dark\:text-black {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       color: var(--color-black);
     }
   }
   .dark\:text-gray-400 {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       color: var(--color-gray-400);
     }
   }
   .dark\:text-gray-500 {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       color: var(--color-gray-500);
     }
   }
   .dark\:text-gray-600 {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       color: var(--color-gray-600);
     }
   }
   .dark\:text-white {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       color: var(--color-white);
     }
   }
   .dark\:text-y2k-blue {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       color: var(--color-y2k-blue);
     }
   }
   .dark\:text-y2k-cyan {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       color: var(--color-y2k-cyan);
     }
   }
   .dark\:text-y2k-lime {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       color: var(--color-y2k-lime);
     }
   }
   .dark\:text-y2k-pink {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       color: var(--color-y2k-pink);
     }
   }
   .dark\:text-y2k-white {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       color: var(--color-y2k-white);
     }
   }
   .dark\:text-y2k-yellow {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       color: var(--color-y2k-yellow);
     }
   }
   .dark\:opacity-20 {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       opacity: 20%;
     }
   }
   .dark\:placeholder\:text-gray-600 {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       &::placeholder {
         color: var(--color-gray-600);
       }
     }
   }
   .dark\:hover\:bg-white {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       &:hover {
         @media (hover: hover) {
           background-color: var(--color-white);
@@ -1744,7 +1744,7 @@
     }
   }
   .dark\:hover\:bg-y2k-blue {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       &:hover {
         @media (hover: hover) {
           background-color: var(--color-y2k-blue);
@@ -1753,7 +1753,7 @@
     }
   }
   .dark\:hover\:bg-y2k-cyan {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       &:hover {
         @media (hover: hover) {
           background-color: var(--color-y2k-cyan);
@@ -1762,7 +1762,7 @@
     }
   }
   .dark\:hover\:bg-y2k-lime {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       &:hover {
         @media (hover: hover) {
           background-color: var(--color-y2k-lime);
@@ -1771,7 +1771,7 @@
     }
   }
   .dark\:hover\:bg-y2k-pink {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       &:hover {
         @media (hover: hover) {
           background-color: var(--color-y2k-pink);
@@ -1780,7 +1780,7 @@
     }
   }
   .dark\:hover\:bg-y2k-yellow {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       &:hover {
         @media (hover: hover) {
           background-color: var(--color-y2k-yellow);
@@ -1789,7 +1789,7 @@
     }
   }
   .dark\:hover\:text-black {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       &:hover {
         @media (hover: hover) {
           color: var(--color-black);
@@ -1798,7 +1798,7 @@
     }
   }
   .dark\:hover\:text-white {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       &:hover {
         @media (hover: hover) {
           color: var(--color-white);
@@ -1807,7 +1807,7 @@
     }
   }
   .dark\:hover\:text-y2k-cyan {
-    @media (prefers-color-scheme: dark) {
+    &:is(.dark *) {
       &:hover {
         @media (hover: hover) {
           color: var(--color-y2k-cyan);
@@ -1818,7 +1818,7 @@
   .hover\:dark\:text-y2k-lime {
     &:hover {
       @media (hover: hover) {
-        @media (prefers-color-scheme: dark) {
+        &:is(.dark *) {
           color: var(--color-y2k-lime);
         }
       }
@@ -1826,35 +1826,35 @@
   }
   .md\:dark\:bg-black {
     @media (width >= 48rem) {
-      @media (prefers-color-scheme: dark) {
+      &:is(.dark *) {
         background-color: var(--color-black);
       }
     }
   }
   .md\:dark\:bg-y2k-cyan {
     @media (width >= 48rem) {
-      @media (prefers-color-scheme: dark) {
+      &:is(.dark *) {
         background-color: var(--color-y2k-cyan);
       }
     }
   }
   .md\:dark\:text-black {
     @media (width >= 48rem) {
-      @media (prefers-color-scheme: dark) {
+      &:is(.dark *) {
         color: var(--color-black);
       }
     }
   }
   .md\:dark\:text-y2k-pink {
     @media (width >= 48rem) {
-      @media (prefers-color-scheme: dark) {
+      &:is(.dark *) {
         color: var(--color-y2k-pink);
       }
     }
   }
   .md\:dark\:hover\:bg-y2k-lime {
     @media (width >= 48rem) {
-      @media (prefers-color-scheme: dark) {
+      &:is(.dark *) {
         &:hover {
           @media (hover: hover) {
             background-color: var(--color-y2k-lime);
@@ -1865,7 +1865,7 @@
   }
   .md\:dark\:hover\:bg-y2k-pink {
     @media (width >= 48rem) {
-      @media (prefers-color-scheme: dark) {
+      &:is(.dark *) {
         &:hover {
           @media (hover: hover) {
             background-color: var(--color-y2k-pink);
@@ -1876,7 +1876,7 @@
   }
   .md\:dark\:hover\:text-black {
     @media (width >= 48rem) {
-      @media (prefers-color-scheme: dark) {
+      &:is(.dark *) {
         &:hover {
           @media (hover: hover) {
             color: var(--color-black);

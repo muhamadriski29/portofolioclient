@@ -6,19 +6,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Theme Management (Dark/Light Mode)
     const htmlEl = document.documentElement;
-    const themeToggles = [
-        document.getElementById('theme-toggle'),
-        document.getElementById('mobile-theme-toggle')
+    
+    // Dark Mode Toggles
+    const darkModeToggles = [
+        document.getElementById('darkmode-toggle'),
+        document.getElementById('mobile-darkmode-toggle')
     ];
 
-    // Check local storage or system preference on load
+    // Check local storage on load
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-        htmlEl.classList.remove('dark');
-    } else {
-        // Default is dark as per requirements
+    // Default is light as per requirements (no auto device detection)
+    if (savedTheme === 'dark') {
         htmlEl.classList.add('dark');
+    } else {
+        htmlEl.classList.remove('dark');
     }
+
+    // Function to update the icon of the dark mode buttons
+    const updateDarkModeIcon = () => {
+        const isDark = htmlEl.classList.contains('dark');
+        darkModeToggles.forEach(btn => {
+            if (btn) {
+                const iconName = isDark ? 'sun' : 'moon';
+                if (btn.id === 'mobile-darkmode-toggle') {
+                    const text = isDark ? ' LIGHT_MODE' : ' DARK_MODE';
+                    btn.innerHTML = `<i data-lucide="${iconName}"></i>${text}`;
+                } else {
+                    btn.innerHTML = `<i data-lucide="${iconName}" class="w-5 h-5"></i>`;
+                }
+            }
+        });
+        // Re-initialize new icons
+        lucide.createIcons();
+    };
+
+    // Initial icon setup
+    updateDarkModeIcon();
 
     // Toggle function
     const toggleTheme = () => {
@@ -29,10 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
             htmlEl.classList.add('dark');
             localStorage.setItem('theme', 'dark');
         }
+        updateDarkModeIcon();
     };
 
-    // Add event listeners to all theme toggle buttons
-    themeToggles.forEach(btn => {
+    // Add event listeners to the dark mode buttons
+    darkModeToggles.forEach(btn => {
         if (btn) {
             btn.addEventListener('click', toggleTheme);
         }
