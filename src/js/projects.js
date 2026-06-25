@@ -1,9 +1,7 @@
 // projects.js - Fetch & render projects from REST API
 // Endpoint: http://localhost:8080/api/projects
 
-const API_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') 
-    ? 'http://localhost:8080/api/projects' 
-    : 'https://api.domainanda.com/api/projects';
+const API_URL = 'https://portofolioapi-jxmu.onrender.com/api/projects';
 
 // Y2K color accent cycling for card variety
 const ACCENT_COLORS = [
@@ -302,7 +300,7 @@ async function fetchProjects() {
 
     } catch (error) {
         console.error('[PROJECTS.DLL] Fetch error:', error);
-        renderError(error.message || 'Tidak dapat terhubung ke server. Pastikan backend berjalan di localhost:8080.');
+        renderError(error.message || 'Tidak dapat terhubung ke server.');
     }
 }
 

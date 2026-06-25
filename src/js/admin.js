@@ -9,9 +9,7 @@
     'use strict';
 
     // ─── Config ───────────────────────────────────────────────────────────────
-    const API_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') 
-        ? 'http://localhost:8080/api/projects' 
-        : 'https://api.domainanda.com/api/projects';
+    const API_URL = 'https://portofolioapi-jxmu.onrender.com/api/projects';
     const AUTH_KEY = 'cms_admin_auth';
 
     // ─── State ────────────────────────────────────────────────────────────────
@@ -90,7 +88,7 @@
                     ${!isSuccess ? `
                     <div class="font-pixel text-xs sm:text-sm dark:text-y2k-cyan text-gray-500 mt-2 space-y-0.5">
                         <p>&gt; Endpoint: <span class="dark:text-y2k-white">${API_URL}</span></p>
-                        <p>&gt; Pastikan server backend sedang berjalan di localhost:8080.</p>
+                        <p>&gt; Pastikan server backend sedang berjalan.</p>
                     </div>` : ''}
                 </div>
             </div>
@@ -340,7 +338,7 @@
         } catch (err) {
             console.error('[ADMIN.EXE] Create error:', err);
             const msg = err.name === 'TypeError'
-                ? 'Tidak dapat terhubung ke server. Pastikan backend berjalan di localhost:8080.'
+                ? 'Tidak dapat terhubung ke server.'
                 : err.message;
             showMessage('error', msg);
             updateStatusBar('CONNECTION FAILED');
@@ -380,7 +378,7 @@
         } catch (err) {
             console.error('[ADMIN.EXE] Update error:', err);
             const msg = err.name === 'TypeError'
-                ? 'Tidak dapat terhubung ke server. Pastikan backend berjalan di localhost:8080.'
+                ? 'Tidak dapat terhubung ke server.'
                 : err.message;
             showMessage('error', msg);
             updateStatusBar('CONNECTION FAILED');
